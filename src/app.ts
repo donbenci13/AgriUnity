@@ -31,7 +31,7 @@ const app = (function () {
         init: () => {
             searchForm.addEventListener("submit", async function (e: SubmitEvent) {
                 e.preventDefault();
-                const weatherService = new WeatherService("46fe646c1190056c5763e902757940cc") //abstract this in a .env file in a real project
+                const weatherService = new WeatherService("46fe646c1190056c5763e902757940cc") //hide this in a .env file in a real project
                 const location = searchInput.value
                 weatherService.geoCodingAPI(location)
                     .then(georesult => {
@@ -46,9 +46,10 @@ const app = (function () {
                         const sunset = new Date((sys.sunset) * 1000)
 
                         const localDatetime = weatherService.getDate(dt.toString(), timezone.toString())
+                        //render the main section
                         let loadMainHtml: string = mainTemplate(localDatetime, temp, name)
                         mainSection.innerHTML = loadMainHtml += templateOne(`Feels like ${feels_like}°C. ${main}.${description}`)
-
+                        //render the other info
                         let loadHTML: string = ''
                         const htmlCollection = [
                             templateTwo("Humidity", `${humidity}%`),
@@ -59,11 +60,9 @@ const app = (function () {
                             templateTwo("Sun Rise", `${sunrise.toLocaleTimeString()}`),
                             templateTwo("Sun Set", `${sunset.toLocaleTimeString()}`),
                         ]
-
                         htmlCollection.forEach(element => {
                             loadHTML += element
                         });
-
                         infoSection.innerHTML = loadHTML
                     })
                     .catch(err => {
@@ -76,4 +75,5 @@ const app = (function () {
     }
 })()
 
+//Initilize app
 app.init()

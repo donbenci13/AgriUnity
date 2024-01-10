@@ -1,4 +1,8 @@
-// Standard variation
+/**
+ * Extending fetch to add generic typing
+ * @param url 
+ * @returns 
+ */
 export function http<T>(url: string): Promise<T> {
     return fetch(url)
         .then(response => {

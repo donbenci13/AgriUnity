@@ -59,7 +59,7 @@ export default class WeatherService extends WeatherHelper {
     async geoCodingAPI(location: string) {
         return http<GeoCoding[]>(`${this.baseURL}geo/1.0/direct?q=${location}&limit=1&appid=${this.apikey}`)
     }
-    async weatherAPI({ lat, lon }: { lat: number, lon: number }) {
+    async weatherAPI({ lat, lon }: coord) {
         return http<Weather>(`${this.baseURL}data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.apikey}&units=metric`)
     }
 }

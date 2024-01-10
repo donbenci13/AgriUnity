@@ -59,7 +59,7 @@ var app = (function () {
                     var weatherService, location;
                     return __generator(this, function (_a) {
                         e.preventDefault();
-                        weatherService = new WeatherService("46fe646c1190056c5763e902757940cc") //abstract this in a .env file in a real project
+                        weatherService = new WeatherService("46fe646c1190056c5763e902757940cc") //hide this in a .env file in a real project
                         ;
                         location = searchInput.value;
                         weatherService.geoCodingAPI(location)
@@ -74,8 +74,10 @@ var app = (function () {
                             var sunrise = new Date((sys.sunrise) * 1000);
                             var sunset = new Date((sys.sunset) * 1000);
                             var localDatetime = weatherService.getDate(dt.toString(), timezone.toString());
+                            //render the main section
                             var loadMainHtml = mainTemplate(localDatetime, temp, name);
                             mainSection.innerHTML = loadMainHtml += templateOne("Feels like ".concat(feels_like, "\u00B0C. ").concat(main, ".").concat(description));
+                            //render the other info
                             var loadHTML = '';
                             var htmlCollection = [
                                 templateTwo("Humidity", "".concat(humidity, "%")),
@@ -102,4 +104,5 @@ var app = (function () {
         }
     };
 })();
+//Initilize app
 app.init();
