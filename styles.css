@@ -1,0 +1,29 @@
+.error {
+    background-color: #ff2c2c;
+    color: #fff;
+    padding: 12px;
+    margin: 12px auto;
+    max-width: 213px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.single-pill {
+    margin-bottom: 12px;
+    font-style: oblique;
+}
+
+.pill {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+.pill .value {
+    width: 100px;
+}
