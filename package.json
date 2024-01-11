@@ -1,7 +1,7 @@
 {
-  "name": "agriunity",
+  "name": "weatherbylocation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple app showing weather by location using openweathermap",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "build": "npx tsc src",
     "build:watch": "npx tsc --watch"
   },
-  "author": "",
+  "author": "Don Bencilao",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.6.1"
