@@ -40,6 +40,7 @@ var app = (function () {
     var searchForm = document.getElementById("searchForm");
     var infoSection = document.getElementById("info");
     var mainSection = document.getElementById("mainInfo");
+    var dataSection = document.getElementById("data-section");
     var mainTemplate = function (time, temp, name) {
         return "\n            <h2>".concat(name, "</h2>\n            <h3>").concat(temp, "\u00B0C at ").concat(time, "</h3>\n        ");
     };
@@ -92,6 +93,7 @@ var app = (function () {
                                 loadHTML += element;
                             });
                             infoSection.innerHTML = loadHTML;
+                            dataSection.classList.add('active');
                         })
                             .catch(function (err) {
                             mainSection.innerHTML = "<div class=\"error\">".concat(err.message, "</div>");

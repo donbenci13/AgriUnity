@@ -4,6 +4,8 @@ const app = (function () {
     const searchForm = document.getElementById("searchForm") as HTMLFormElement
     const infoSection = document.getElementById("info") as HTMLDivElement
     const mainSection = document.getElementById("mainInfo") as HTMLDivElement
+    const dataSection = document.getElementById("data-section") as HTMLDivElement
+
     const mainTemplate = (time: string, temp: number, name: string) => {
         return `
             <h2>${name}</h2>
@@ -63,7 +65,8 @@ const app = (function () {
                         htmlCollection.forEach(element => {
                             loadHTML += element
                         });
-                        infoSection.innerHTML = loadHTML
+                        infoSection.innerHTML = loadHTML;
+                        dataSection.classList.add('active')
                     })
                     .catch(err => {
                         mainSection.innerHTML = `<div class="error">${err.message}</div>`

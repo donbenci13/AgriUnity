@@ -1,3 +1,8 @@
+body {
+    font-family: monospace;
+    font-size: 16px;
+}
+
 .error {
     background-color: #ff2c2c;
     color: #fff;
@@ -9,8 +14,16 @@
 .container {
     max-width: 700px;
     margin: 0 auto;
-    margin-top: 20%;
+    margin-top: 10%;
     text-align: center;
+}
+
+#data-section.active {
+    border: 1px solid #eee;
+    margin: 24px auto;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #eee;
+    padding: 24px;
 }
 
 .single-pill {
